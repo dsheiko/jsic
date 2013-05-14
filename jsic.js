@@ -1,7 +1,7 @@
 /**
  * js-import-compiler
  *
- * Look for dependencies recursevely in source file and
+ * Look for dependencies recursively in source file and
  * resolve them in compiled destination file
  *
  * Dependency annotation:
