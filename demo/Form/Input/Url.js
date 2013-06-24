@@ -1,4 +1,4 @@
-                function( value ) {
+                module.exports = function( value ) {
                    return {
                        name : "Form_Input_Url",
                        /**
@@ -17,4 +17,4 @@
                            }
                        }
                    };
-               }
+               };

@@ -68,6 +68,8 @@ var fs = require('fs'),
             */
             processSource: function( srcData, srcPath ) {
                 var that = this,
+                    exportStmPreRe = /^\s*module\.exports\s+=\s+/i,
+                    exportStmPostRe = /;\s*$/,
                     matches;
                 matches = srcData.match( jsRequireMatchRe );
                 matches && matches.forEach(function( match ){
@@ -79,6 +81,9 @@ var fs = require('fs'),
                     if ( !that.isResolved( depFile ) ) {
                         reqData = that.processDependency( depFile );
                         srcData = srcData.replace( match, reqData );
+                        srcData = srcData
+                            .replace( exportStmPreRe, "" )
+                            .replace( exportStmPostRe, "" );
                         srcData = that.processSource( srcData, srcPath );
                     } else {
                         // If resolved, just remove $import(..)
