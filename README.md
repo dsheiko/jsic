@@ -15,11 +15,14 @@ STATUS: 0.1.0
 
 
 Define dependencies in your code:
+
 src/main.js
 ```	
 var foo = $import("./Form/Input/Tel");
 ```
+
 Create the dependency source:
+
 src/Form/Input/Tel.js
 ```
 function() {
@@ -31,12 +34,13 @@ function() {
 ```
 
 Run the compiler:
+
 ```
 node jsic.js src/main.js build/mail.js
 ```
 
 Examine the combined file:
-```
+
 build/main.js
 ```	
 var foo = function() {
