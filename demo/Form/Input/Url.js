@@ -1,4 +1,8 @@
-                module.exports = function( value ) {
+/**
+ * Example of comment banner
+ * @module example
+ */
+            module.exports = function( value ) {
                    return {
                        name : "Form_Input_Url",
                        /**

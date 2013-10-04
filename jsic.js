@@ -23,7 +23,28 @@ var fs = require('fs'),
 
     Compiler = function() {
         var deps = [],
-            jsRequireMatchRe = /\$import\([\"\'](.*?)[\"\']\)/gmi;
+            jsRequireMatchRe = /\$import\([\"\'](.*?)[\"\']\)/gmi,
+            /**
+             * Return the given source code with any leading banner comment stripped.
+             *
+             * @param {string} src
+             * @returns {string}
+             */
+            stripCommentBanner = function ( src ){
+              var re = /^\s*\/\*[\s\S]*\*\//m;
+              return src.replace(re, '');
+            },
+            /**
+             * Stips "module.exports = " .. ";" wrapper
+             *
+             * @param {string} src
+             * @returns {string}
+             */
+            stripModuleWrapper = function ( src ){
+              var exportStmPreRe = /^\s*module\.exports\s+=\s*/,
+                  exportStmPostRe = /;\s*$/;
+              return src.replace( exportStmPreRe, "" ).replace( exportStmPostRe, "" );
+            };
         return {
             /**
              *
@@ -68,8 +89,6 @@ var fs = require('fs'),
             */
             processSource: function( srcData, srcPath ) {
                 var that = this,
-                    exportStmPreRe = /^\s*module\.exports\s+=\s*/,
-                    exportStmPostRe = /;\s*$/,
                     matches;
                 matches = srcData.match( jsRequireMatchRe );
                 matches && matches.forEach(function( match ){
@@ -77,12 +96,10 @@ var fs = require('fs'),
                         depPathMatch = re.exec( match ),
                         // Get relative path
                         depFile = path.join( srcPath, depPathMatch[ 1 ]),
-                        reqData;;
+                        reqData;
                     if ( !that.isResolved( depFile ) ) {
                         reqData = that.processDependency( depFile );
-                        reqData = reqData
-                            .replace( exportStmPreRe, "" )
-                            .replace( exportStmPostRe, "" );
+                        reqData = stripModuleWrapper( stripCommentBanner ( reqData ) );;
                         srcData = srcData.replace( match, reqData );
                         srcData = that.processSource( srcData, srcPath );
                     } else {
