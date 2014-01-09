@@ -31,7 +31,7 @@ var fs = require('fs'),
              * @returns {string}
              */
             stripCommentBanner = function ( src ){
-              var re = /^\s*\/\*[\s\S]*\*\//m;
+              var re = /^\s*\/\*[\s\S]+module\.exports\s+=\s*/m;
               return src.replace(re, '');
             },
             /**
