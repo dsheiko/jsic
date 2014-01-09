@@ -23,7 +23,7 @@ var fs = require('fs'),
 
     Compiler = function() {
         var deps = [],
-            jsRequireMatchRe = /\$import\([\"\'](.*?)[\"\']\)/gmi,
+            jsRequireMatchRe = /\$import\(\s*[\"\'](.*?)[\"\']\s*\)/gmi,
             /**
              * Return the given source code with any leading banner comment stripped.
              *
@@ -92,7 +92,7 @@ var fs = require('fs'),
                     matches;
                 matches = srcData.match( jsRequireMatchRe );
                 matches && matches.forEach(function( match ){
-                    var re = /\$import\([\"\'](.*?)[\"\']\)/i,
+                    var re = /\$import\(\s*[\"\'](.*?)[\"\']\s*\)/i,
                         depPathMatch = re.exec( match ),
                         // Get relative path
                         depFile = path.join( srcPath, depPathMatch[ 1 ]),
