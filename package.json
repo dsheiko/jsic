@@ -3,8 +3,9 @@
   "description": "JS Import Compiler optimizes JavaScript by inlining recursively JavaScript files referenced by $import function ",
   "version": "0.1.5",
   "author": "Dmitry Sheiko <me@dsheiko.com>",
+	"main": "jsic-module.js",
   "bin": {
-    "jscs": "./jsic"
+    "jscs": "./jsic.js"
   },
 	"dependencies": {
 		"esprima": "~1.0.4"
