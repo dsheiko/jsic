@@ -1,0 +1,127 @@
+{
+    "type": "Program",
+    "body": [
+        {
+            "type": "VariableDeclaration",
+            "declarations": [
+                {
+                    "type": "VariableDeclarator",
+                    "id": {
+                        "type": "Identifier",
+                        "name": "Input",
+                        "range": [
+                            115,
+                            120
+                        ]
+                    },
+                    "init": {
+                        "type": "ObjectExpression",
+                        "properties": [
+                            {
+                                "type": "Property",
+                                "key": {
+                                    "type": "Identifier",
+                                    "name": "Tel",
+                                    "range": [
+                                        169,
+                                        172
+                                    ]
+                                },
+                                "value": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                        "type": "Identifier",
+                                        "name": "$import",
+                                        "range": [
+                                            174,
+                                            181
+                                        ]
+                                    },
+                                    "arguments": [
+                                        {
+                                            "type": "Literal",
+                                            "value": "./Form/Input/Tel",
+                                            "raw": "\"./Form/Input/Tel\"",
+                                            "range": [
+                                                182,
+                                                200
+                                            ]
+                                        }
+                                    ],
+                                    "range": [
+                                        174,
+                                        201
+                                    ]
+                                },
+                                "kind": "init",
+                                "range": [
+                                    169,
+                                    201
+                                ]
+                            },
+                            {
+                                "type": "Property",
+                                "key": {
+                                    "type": "Identifier",
+                                    "name": "Url",
+                                    "range": [
+                                        247,
+                                        250
+                                    ]
+                                },
+                                "value": {
+                                    "type": "CallExpression",
+                                    "callee": {
+                                        "type": "Identifier",
+                                        "name": "$import",
+                                        "range": [
+                                            252,
+                                            259
+                                        ]
+                                    },
+                                    "arguments": [
+                                        {
+                                            "type": "Literal",
+                                            "value": "./Form/Input/Url",
+                                            "raw": "\"./Form/Input/Url\"",
+                                            "range": [
+                                                260,
+                                                278
+                                            ]
+                                        }
+                                    ],
+                                    "range": [
+                                        252,
+                                        279
+                                    ]
+                                },
+                                "kind": "init",
+                                "range": [
+                                    247,
+                                    279
+                                ]
+                            }
+                        ],
+                        "range": [
+                            123,
+                            292
+                        ]
+                    },
+                    "range": [
+                        115,
+                        292
+                    ]
+                }
+            ],
+            "kind": "var",
+            "range": [
+                2,
+                292
+            ]
+        }
+    ],
+    "range": [
+        2,
+        292
+    ]
+}

@@ -1,0 +1,131 @@
+{
+    "type": "Program",
+    "body": [
+        {
+            "type": "ExpressionStatement",
+            "expression": {
+                "type": "CallExpression",
+                "callee": {
+                    "type": "Identifier",
+                    "name": "$import",
+                    "range": [
+                        0,
+                        7
+                    ]
+                },
+                "arguments": [
+                    {
+                        "type": "Literal",
+                        "value": "case1",
+                        "raw": "\"case1\"",
+                        "range": [
+                            9,
+                            16
+                        ]
+                    }
+                ],
+                "range": [
+                    0,
+                    18
+                ]
+            },
+            "range": [
+                0,
+                19
+            ]
+        },
+        {
+            "type": "ExpressionStatement",
+            "expression": {
+                "type": "AssignmentExpression",
+                "operator": "=",
+                "left": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                        "type": "ThisExpression",
+                        "range": [
+                            20,
+                            24
+                        ]
+                    },
+                    "property": {
+                        "type": "Identifier",
+                        "name": "ns",
+                        "range": [
+                            25,
+                            27
+                        ]
+                    },
+                    "range": [
+                        20,
+                        27
+                    ]
+                },
+                "right": {
+                    "type": "ObjectExpression",
+                    "properties": [
+                        {
+                            "type": "Property",
+                            "key": {
+                                "type": "Identifier",
+                                "name": "prop",
+                                "range": [
+                                    32,
+                                    36
+                                ]
+                            },
+                            "value": {
+                                "type": "CallExpression",
+                                "callee": {
+                                    "type": "Identifier",
+                                    "name": "$import",
+                                    "range": [
+                                        38,
+                                        45
+                                    ]
+                                },
+                                "arguments": [
+                                    {
+                                        "type": "Literal",
+                                        "value": "case2",
+                                        "raw": "\"case2\"",
+                                        "range": [
+                                            47,
+                                            54
+                                        ]
+                                    }
+                                ],
+                                "range": [
+                                    38,
+                                    56
+                                ]
+                            },
+                            "kind": "init",
+                            "range": [
+                                32,
+                                56
+                            ]
+                        }
+                    ],
+                    "range": [
+                        30,
+                        58
+                    ]
+                },
+                "range": [
+                    20,
+                    58
+                ]
+            },
+            "range": [
+                20,
+                58
+            ]
+        }
+    ],
+    "range": [
+        0,
+        58
+    ]
+}

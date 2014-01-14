@@ -1,0 +1,80 @@
+/*
+ * @package jscs
+ * @author sheiko
+ * @license MIT
+ * @copyright (c) Dmitry Sheiko http://www.dsheiko.com
+ * @jscs standard:Jquery
+ * Code style: http://docs.jquery.com/JQuery_Core_Style_Guidelines
+ */
+
+var Form = (function( global  ){
+	"strict mode";
+			var
+				 /**
+					* Input type custom validators
+					* @namespace
+					*/
+				 Input = {
+					/**
+					 * @constructor
+					 * @param {string} value
+					 */
+					 Tel: function( value ) {
+						var utils = {
+									/**
+									 * @param {string}
+									*/
+									ucfirst: function( str ) {
+										//...
+									}
+								};
+								return {
+										name : "Form_Input_Tel",
+										/**
+										 * Validate input value
+										 *
+										 * @public
+										 * @memberof Input.Tel
+										 * @return {object} ValidationLogger
+										 */
+										validateValue: function() {
+												var pattern = /^\+(?:[0-9] ?){6,14}[0-9]$/;
+												if ( !pattern.test( value ) ) {
+													 throw new Error("Please enter a valid tel. number +1 11 11 11");
+											 }
+										}
+								};
+					},
+					/**
+					 * @constructor
+					 * @param {string} value
+					 */
+					 Url: function( value ) {
+								 return {
+										 name : "Form_Input_Url",
+										 /**
+											 * Validate input value
+											 *
+											 * @public
+											 * @memberof Input.Url
+											 * @return {object} ValidationLogger
+											 */
+										 validateValue: function() {
+												 // The pattern is taken from
+												 // http://stackoverflow.com/questions/2838404/javascript-regex-url-matching
+												 // pattern fragments: protocol, domain name OR ip (v4) address, port and path,
+												 // query string, fragment locater
+												 var pattern = /^..$/i;
+												 if ( !pattern.test( value ) ) {
+														 throw new Error("Please enter a valid URL");
+												 }
+										 }
+								 };
+					}
+				 },
+				 telInpInstance = new Input.Tel( "" ),
+				 urlInpInstance = new Input.Url( "" );
+
+			console.log( telInpInstance.name, urlInpInstance.name ); // Form_Input_Tel Form_Input_Url
+
+}( this ));
