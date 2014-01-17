@@ -61,7 +61,7 @@ var fs = require( "fs" ),
 		return function( argv ) {
 
 			if ( argv.length < 4 ) {
-				console.log( helpScreen );
+				console.log( HELP_SCREEN );
 				process.exit( 0 );
 			}
 
