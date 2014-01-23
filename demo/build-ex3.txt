@@ -1,0 +1,6 @@
+var dep = (function(){
+            return {
+							bar: 1
+            }
+        }()),
+		foo = "foo";
