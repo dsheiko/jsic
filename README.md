@@ -71,3 +71,4 @@ module.exports = function() {
 ## JSIC as a grunt task
 
 Please find instructions at https://github.com/dsheiko/grunt-jsic
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/7068f01039ad3ba89ec3f2f8758237c6 "githalytics.com")](http://githalytics.com/dsheiko/jsic)
