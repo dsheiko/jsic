@@ -1,6 +1,10 @@
 JS Import Compiler
 ==============
 
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+> WARNING - THIS PROJECT IS NO LONGER MAINTAINED!!!
+
 JS Import Compiler is a node.js application that
 looks for `$import` calls recursively in the source JavaScript file and
  resolves them in the destination file the same way as LESS/SCSS preprocessors resolve
